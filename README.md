@@ -76,7 +76,7 @@ Máquina B
 Maquina virtual
 Sistema Operativo: Ubuntu server 12.04
 Procesador: 1 nucleo
-RAM: 2048MB
+RAM: 4096MB
 
 ## Pruebas realizadas ##
 
@@ -168,4 +168,4 @@ Gran volumen de mensajes. Mensajes de tamaño pequeño
 <br>
 
 ## Conclusión ##
-Como podemos ver en ambos análisis la máquina A tiene un rendimiento superior a la máquina B. Incluso es capaz de superar una de las pruebas de estrés. ¿Es la mejor elección? Dependerá del uso que se le dé al servidor de correo, dependiendo del volumen de tráfico. Si va a tener un tráfico muy bajo será mejor la máquina B para abaratar costes, si va a tener más tráfico la máquina A es la mejor y como es normal para tráficos mucho más altos pues se requerirá un servidor mayor.
+Como podemos ver en los datos la máquina A tiene un rendimiento superior a la máquina B. Vemos que lo que realmente hace cuello de botella en el servidor es el procesador con lo que dependiendo del flujo de tráfico que vaya a tener será la opción más a tener en cuenta a la hora de realizar una ampliación.
