@@ -1,7 +1,7 @@
-PracticaIV3
+PrácticaIV3
 ===========
 
-## Que se va ha hacer en esta práctica ##
+## Qué se va a hacer en esta práctica ##
 
 Vamos a montar dos máquinas virtuales con distintas características y en la dos vamos a crear un servidor de correo con Postfix (Servidor de correo de software libre / código abierto, un programa
 informático para el enrutamiento y envío de correo electrónico) . Después le haremos un benchmark para comprobar su rendimiento en ambas máquinas.
@@ -52,35 +52,35 @@ Configuramos Squirrel con:
 squirrelmail-configure
 </pre>
 
-Para la configuración de Squirrel, la creación de usuarios y el envío de correo me he ayudado en esta página:
+Para la configuración de Squirrel, la creación de usuarios y el envío de correo me he ayudado de esta página:
 http://blogdeaitor.wordpress.com/2011/05/26/instalacion-y-configuracion-de-postfix-y-squirrel-en-linux/
 
-## Como vamos a evaluar los datos ##
+## Cómo vamos a evaluar los datos ##
 
-Vamos a usar Postal. Con el vamos a realizar las pruebas de estrés de nuestro servidor de correo. También para medir cuanto tarda un servidor en enviar mensajes usaremos smtp-source.
+Vamos a usar Postal. Con el vamos a realizar las pruebas de estrés de nuestro servidor de correo. También para medir cuánto tarda un servidor en enviar mensajes usaremos smtp-source.
 
 Para instalar smtp-source necesitamos instalar mailutils
 <img src=https://dl.dropboxusercontent.com/u/71428812/ivp3/5.jpg />
 
-Postal lo incluye Postfix al instalarlo.
+Postal incluye Postfix al instalarlo.
 
 ## Servidores ##
 
 Máquina A.
-Maquina virtual.
+Máquina virtual.
 Sistema Operativo: Ubuntu server 12.04
-Procesador: 2 nucleo.
+Procesador: 2 núcleos.
 RAM: 1024MB.
 
 Máquina B
-Maquina virtual
+Máquina virtual
 Sistema Operativo: Ubuntu server 12.04
-Procesador: 1 nucleo
+Procesador: 1 núcleo
 RAM: 4096MB
 
 ## Pruebas realizadas ##
 
-Prueba de estres:
+Prueba de estrés:
 <br>
   Con varias hebras:
     Gran volumen de mensajes. Mensajes de gran tamaño
@@ -108,7 +108,7 @@ Gran volumen de mensajes. Mensajes de pequeño tamaño
 postal -t 1 -m 512 -r 1000 localhost user-list
 </pre>
 
-t indica el numero de hebras, m el tamaño del mensaje en KB, r el numero de mensajes a enviar por minuto y user-list el archivo donde se encuentran a que direcciones vamos a enviar el correo.
+t indica el número de hebras, m el tamaño del mensaje en KB, r el número de mensajes a enviar por minuto y user-list el archivo donde se encuentran a que direcciones vamos a enviar el correo.
 <br>
 <br>
 <br>
@@ -135,14 +135,14 @@ Gran volumen de mensajes. Mensajes de tamaño pequeño
   time smtp-source -c -l 512 -t juanda@localhost -s 4 -m 1000 localhost
   </pre>
   
-El comando c hace que se muestre el contador de mensajes, l el tamaño del mensaje en KB, t la direccion a la que envia los mensajes, s el numero de hebras y m el numero de mensajes a envia.
+El comando c hace que se muestre el contador de mensajes, l el tamaño del mensaje en KB, t la dirección a la que envía los mensajes, s el numero de hebras y m el numero de mensajes a envía.
 
 ## Resultados ##
-Pruebas de estres en máquina A
+Pruebas de estrés en máquina A
 <br>
 <img src=https://dl.dropboxusercontent.com/u/71428812/ivp3/6.jpg />
 <br>
-Pruebas de estres en máquina B
+Pruebas de estrés en máquina B
 <br>
 <img src=https://dl.dropboxusercontent.com/u/71428812/ivp3/7.jpg />
 <br>
