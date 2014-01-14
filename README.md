@@ -57,7 +57,7 @@ http://blogdeaitor.wordpress.com/2011/05/26/instalacion-y-configuracion-de-postf
 
 ## Cómo vamos a evaluar los datos ##
 
-Vamos a usar Postal. Con el vamos a realizar las pruebas de estrés de nuestro servidor de correo. También para medir cuánto tarda un servidor en enviar mensajes usaremos smtp-source.
+Vamos a usar Postal. Con él vamos a realizar las pruebas de estrés de nuestro servidor de correo. También para medir cuánto tarda un servidor en enviar mensajes usaremos smtp-source.
 
 Para instalar smtp-source necesitamos instalar mailutils
 <img src=https://dl.dropboxusercontent.com/u/71428812/ivp3/5.jpg />
@@ -83,13 +83,15 @@ RAM: 4096MB
 Prueba de estrés:
 <br>
   Con varias hebras:
+  <br>
     Gran volumen de mensajes. Mensajes de gran tamaño
     
 <pre>
     postal -t 4 -m 5120 -r 1000 localhost user-list
 </pre>
 
-    Gran volumen de mensajes. Mensajes de pequeño tamaño
+Gran volumen de mensajes. Mensajes de tamaño pequeño
+
 <pre>
     postal -t 4 -m 512 -r 1000 localhost user-list
 </pre>
@@ -116,6 +118,7 @@ t indica el número de hebras, m el tamaño del mensaje en KB, r el número de m
 Pruebas de rendimiento/tiempo
 <br>
 Con una hebra:
+<br>
     Gran volumen de mensajes. Mensajes de gran tamaño
 <pre>
 time smtp-source -c -l 5120 -t juanda@localhost -s 1 -m 1000 localhost
@@ -135,7 +138,7 @@ Gran volumen de mensajes. Mensajes de tamaño pequeño
   time smtp-source -c -l 512 -t juanda@localhost -s 4 -m 1000 localhost
   </pre>
   
-El comando c hace que se muestre el contador de mensajes, l el tamaño del mensaje en KB, t la dirección a la que envía los mensajes, s el numero de hebras y m el numero de mensajes a envía.
+El comando c hace que se muestre el contador de mensajes, l el tamaño del mensaje en KB, t la dirección a la que envía los mensajes, s el numero de hebras y m el numero de mensajes a enviar.
 
 ## Resultados ##
 Pruebas de estrés en máquina A
